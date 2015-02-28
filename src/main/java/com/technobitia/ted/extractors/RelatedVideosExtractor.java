@@ -43,7 +43,7 @@ public class RelatedVideosExtractor implements Extractor<List<RelatedVideo>> {
         RelatedVideo relatedVideo = new RelatedVideo();
         String imageUrl = element.select(IMAGE_SELECTOR).attr("src");
         String title = element.select(TITLE_SELECTOR).text();
-        String link = element.select(LINK_SELECTOR).text();
+        String link = element.select(LINK_SELECTOR).first().absUrl("href");
         String author = element.select(AUTHOR_SELECTOR).text();
         relatedVideo.setImagePreview(imageUrl);
         relatedVideo.setTitle(title);
